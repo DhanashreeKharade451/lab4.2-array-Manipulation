@@ -14,14 +14,29 @@ function removeItem(item){
 
 }
 
+function renderList(){
+    const ul =document.getElementById("itemList");
+    ul.innerHTML = "";
+
+
+}
+
 function displayList(){
     console.log("Shopping List :")
     shoppingList.forEach(item => console.log(item));
 }
 
-function filterItems (searchItem){
-    return shoppingList.filter(item => 
-        item.tolowercase().includes( searchterm.tolowercase())
-         );
+function handleAddItem(){
+    const input = document.getElementById("itemInput");
+    constitem= input.ariaValueMax.trim();
+    
+
+
+if(item !== ""){
+    addItem(item);
+    renderList();
+    input.value = "";
+    
+}
 
 }
