@@ -8,12 +8,12 @@
 <body>
    
     <h2> Shopping List</h2>
-    <input type="text" id="itemInput" placeholder="Enter Item details">
-    <button onclick="handleAddItem">Add Item</button>
-    <button onclick="">Remove Last Item</button>
+    <input type="text" id="itemInput" placeholder="Enter Item name">
+    <button onclick="handleAddItem()">Add Item</button>
+    <button onclick="handleRemoveItem()">Remove Last Item</button>
     
-    <ul id="itemlist"></ul>
+    <ul id="displayItems"></ul>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

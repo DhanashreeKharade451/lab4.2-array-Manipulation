@@ -1,42 +1,47 @@
+
+//Task 1: Array Manipulation Basics
 let shoppingList = [];
 
 function addItem(item){
+     
+    //shoppingList.push(item);
 
-    if (!shoppingList.includes(items)){
-        shoppingList.push(item);
+    if (!shoppingList.includes(item)){
+        shoppingList.push(item);  //
 
+    } else {
+        console.log("Item Already Exist");
     }
     
 }
 
-function removeItem(item){
+function removeLastItem(item){
     shoppingList.pop();
 
 }
 
-function renderList(){
-    const ul =document.getElementById("itemList");
-    ul.innerHTML = "";
-
-
-}
-
 function displayList(){
-    console.log("Shopping List :")
+    console.log("Shopping List :");
     shoppingList.forEach(item => console.log(item));
 }
 
+function filterItems(searchTerm){
+     return shoppingList.filter(item =>
+item.toLowerCase().includes(searchTerm.toLowerCase()) );
+}
+
+
+
 function handleAddItem(){
     const input = document.getElementById("itemInput");
-    constitem= input.ariaValueMax.trim();
-    
+    const item= input.ariaValueMax.trim();
 
-
-if(item !== ""){
-    addItem(item);
-    renderList();
-    input.value = "";
+    if(item !== ""){
+        addItem(item);
+        updateListDisplayu();
+        input.value = "";
+        
+    }
     
 }
 
-}
