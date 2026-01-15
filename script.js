@@ -23,6 +23,13 @@ function displayList() {
     });
 }
 
+function filterItems(searchTerm){
+    return shoppingList.filter(item => 
+        item.toLowercase().includes(searchTerm.toLowercase())
+    );
+
+}
+
 function handleAddItem() {
     const input = document.getElementById("itemInput");
     const item = input.value.trim();
